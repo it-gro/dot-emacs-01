@@ -56,7 +56,8 @@
 (setq inhibit-startup-message t)
 ;;(view-echo-area-messages)
 ;;(tool-bar-mode -1)
-(load-theme 'manoj-dark)
+;;(load-theme 'manoj-dark)
+(load-theme 'leuven)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; packages install
@@ -79,6 +80,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; packages
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package try)
 
 (use-package which-key
   :ensure t
@@ -139,30 +142,16 @@
 )
 
 (use-package select-themes )
-;;(use-package atom-one-dark-theme   )
-;;(use-package chyla-theme				   )
-;;(use-package constant-theme		     )
-;;(use-package cyberpunk-theme		   )
-;;(use-package darkburn-theme		     )
-;;(use-package darkokai-theme		     )
-;;(use-package goose-theme				   )
-;;(use-package gotham-theme			     )
+(use-package atom-one-dark-theme   )
+(use-package darkburn-theme		     )
+(use-package darkokai-theme		     )
 (use-package grandshell-theme	     )
-;;(use-package green-phosphor-theme  )
-;;(use-package gruber-darker-theme   )
-(use-package idea-darkula-theme    )
-;;(use-package inverse-acme-theme    )
-;;(use-package jazz-theme				     )
-;;(use-package jbeans-theme			     )
-;;(use-package kooten-theme			     )
-(use-package leuven-theme			     )
-;;(use-package madhat2r-theme		     )
-;;(use-package mandm-theme				   )
-;;(use-package monokai-theme			   )
-;;(use-package night-owl-theme		   )
-;;(use-package nova-theme				     )
-;;(use-package overcast-theme		     )
-;;(use-package prassee-theme			   )
+(use-package gruber-darker-theme   )
+(use-package jbeans-theme			     )
+(use-package madhat2r-theme		     )
+(use-package mandm-theme				   )
+(use-package monokai-theme			   )
+(use-package night-owl-theme		   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* ascii art
@@ -234,7 +223,8 @@
 (require 'generic-x)
 ;;(setq auto-mode-alist (cons '("\\.cmd$\\|\\.CMD$" . bat-generic-mode) auto-mode-alist))
 
-(setq generic-define-mswindows-modes t
+(setq
+  generic-define-mswindows-modes t
   generic-define-unix-modes t
   )
 
@@ -608,14 +598,12 @@
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 2)
  '(css-indent-level 2)
- '(custom-safe-themes
-    '("3860a842e0bf585df9e5785e06d600a86e8b605e5cc0b74320dfe667bcbe816c" default))
  '(dired-copy-preserve-time t)
  '(dired-dwim-target t)
  '(electric-indent-mode nil)
  '(js-indent-level 2)
  '(package-selected-packages
-    '(datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote leuven-theme idea-darkula-theme grandshell-theme select-themes logview beacon theme-looper lxd-tramp smex expand-region hungry-delete editorconfig which-key auto-minor-mode diminish use-package))
+	 '(datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote overcast-theme night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme jazz-theme gruber-darker-theme darkokai-theme darkburn-theme atom-one-dark-theme grandshell-theme select-themes logview beacon theme-looper lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package))
  '(powershell-indent 2)
  '(sql-product 'mysql)
  '(tab-width 2))
