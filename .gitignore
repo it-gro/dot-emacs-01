@@ -3,7 +3,6 @@
 ac-comphist.dat
 auto-save-list
 backups
-bookmarks
 elpa
 ido.last
 network-security.data
@@ -11,5 +10,5 @@ recentf
 server
 session.*
 smex-items
-work*
-
+tramp
+work
