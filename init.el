@@ -1,9 +1,7 @@
-;;* gnu-emacs config Grossniklaus Bruno -*-emacs-lisp-*-
+;;; package --- Summary
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;$Copyright: Bruno Grossniklaus $
 ;;$License:   GPL $
-;;$Customer:  none $
-;;$Project:   none $
 ;;$Version:   26.1 $
 ;;$Code:      emacs elisp $
 ;;$Writer:    Bruno Grossniklaus $
@@ -28,8 +26,8 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/")
-	     )
+       '("melpa" . "https://melpa.org/packages/")
+       )
 
 (unless package--initialized (package-initialize t))
 ;; M-x package-refresh-contents
@@ -41,7 +39,7 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package)
-	)
+  )
 
 (require 'use-package)
 (setq use-package-always-ensure t
@@ -70,7 +68,7 @@
 ;; https://github.com/myrjola/diminish.el
 (use-package diminish
   :ensure t
-	)
+  )
 
 ;; https://github.com/joewreschnig/auto-minor-mode
 (use-package auto-minor-mode
@@ -87,13 +85,13 @@
   :ensure t
   :config
   (which-key-mode)
-	)
+  )
 
 (use-package editorconfig
-	:ensure t
-	:config
-	(editorconfig-mode 1)
-	)
+  :ensure t
+  :config
+  (editorconfig-mode 1)
+  )
 
 (use-package hungry-delete
   :ensure t
@@ -103,31 +101,38 @@
 
 (use-package expand-region
   :init
-	(global-set-key (kbd "C-=") 'er/expand-region)
-	)
+  (global-set-key (kbd "C-=") 'er/expand-region)
+  )
 
 (use-package smex
   :bind
-	:init
-	(global-set-key (kbd "M-x") 'smex)
+  :init
+  (global-set-key (kbd "M-x") 'smex)
   (global-set-key (kbd "M-X") 'smex-major-mode-commands)
   ;; This is your old M-x.
   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
   )
 
 (use-package lxd-tramp
-	:ensure t
+  :ensure t
   )
 
+(use-package treemacs
+  :ensure t
+  )
+
+;;(use-package treemacs-icons-dired
+;;  :ensure t
+;;  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* visual upgrade packages
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package theme-looper
-	:init
-	(global-set-key (kbd "C-t") 'theme-looper-enable-next-theme)
-	)
+  :init
+  (global-set-key (kbd "C-t") 'theme-looper-enable-next-theme)
+  )
 
 (use-package beacon
   :config
@@ -143,15 +148,15 @@
 
 (use-package select-themes )
 (use-package atom-one-dark-theme   )
-(use-package darkburn-theme		     )
-(use-package darkokai-theme		     )
-(use-package grandshell-theme	     )
+(use-package darkburn-theme        )
+(use-package darkokai-theme        )
+(use-package grandshell-theme      )
 (use-package gruber-darker-theme   )
-(use-package jbeans-theme			     )
-(use-package madhat2r-theme		     )
-(use-package mandm-theme				   )
-(use-package monokai-theme			   )
-(use-package night-owl-theme		   )
+(use-package jbeans-theme          )
+(use-package madhat2r-theme        )
+(use-package mandm-theme           )
+(use-package monokai-theme         )
+(use-package night-owl-theme       )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* ascii art
@@ -163,10 +168,10 @@
 ;;* prog modes
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package flycheck
-	:ensure t
-	:config
-	(global-flycheck-mode t)
-	)
+  :ensure t
+  :config
+  (global-flycheck-mode t)
+  )
 
 (use-package basic-mode)
 (use-package powershell)
@@ -178,9 +183,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package markdown-mode   )
-(use-package json-mode			 )
-(use-package yaml-mode			 )
-(use-package toml-mode			 )
+(use-package json-mode       )
+(use-package yaml-mode       )
+(use-package toml-mode       )
 (use-package dockerfile-mode )
 
 (use-package csv-mode
@@ -268,22 +273,22 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq hippie-expand-try-functions-list
   '(
-		 try-expand-dabbrev
-		 try-complete-file-name-partially
-		 try-complete-file-name
-		 try-expand-all-abbrevs
-		 try-expand-list
-		 try-expand-line
-		 try-expand-dabbrev-all-buffers
-		 try-expand-dabbrev-from-kill
-		 )
+     try-expand-dabbrev
+     try-complete-file-name-partially
+     try-complete-file-name
+     try-expand-all-abbrevs
+     try-expand-list
+     try-expand-line
+     try-expand-dabbrev-all-buffers
+     try-expand-dabbrev-from-kill
+     )
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* backups
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq make-backup-files t)
-(setq version-control t)		; 'never
+(setq version-control t)    ; 'never
 (setq kept-old-versions 1)
 (setq kept-new-versions 10)
 (setq delete-old-versions t)
@@ -292,7 +297,7 @@
 (setq auto-save-list-file-prefix "~/.emacs.d/auto-save-list/.saves-")
 
 (setq backup-directory-alist nil)
-(add-to-list 'backup-directory-alist '("."	           . "~/.emacs.d/backups/"))
+(add-to-list 'backup-directory-alist '("."             . "~/.emacs.d/backups/"))
 (add-to-list 'backup-directory-alist '(".\\.C$"        . "~/.emacs.d/backups/C"))
 (add-to-list 'backup-directory-alist '(".\\.H$"        . "~/.emacs.d/backups/H"))
 (add-to-list 'backup-directory-alist '(".\\.awk$"      . "~/.emacs.d/backups/awk"))
@@ -355,7 +360,7 @@
 ;;* new keys
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "<f2>")    'toggle-truncate-lines)
-(global-set-key (kbd "<f3>")	  'list-matching-lines)
+(global-set-key (kbd "<f3>")    'list-matching-lines)
 (global-set-key (kbd "<f5>")    'revert-buffer)
 (global-set-key (kbd "<f9>")    'eval-region)
 (global-set-key (kbd "<f12>")   'hippie-expand)
@@ -383,17 +388,17 @@
   "Align region to colon (:) signs"
   (interactive "r")
   (align-regexp
-	  begin end
+    begin end
     (rx (group (zero-or-more (syntax whitespace))) ":") 1 1 )
-	)
+  )
 
 (defun align-to-comma (begin end)
   "Align region to comma  signs"
   (interactive "r")
   (align-regexp
-	  begin end
+    begin end
     (rx "," (group (zero-or-more (syntax whitespace))) ) 1 1 )
-	)
+  )
 
 (defun align-to-equals (begin end)
   "Align region to equal signs"
@@ -405,17 +410,17 @@
   "Align region to hash ( => ) signs"
   (interactive "r")
   (align-regexp
-	  begin end
+    begin end
     (rx (group (zero-or-more (syntax whitespace))) "=>") 1 1 )
-	)
+  )
 
 (defun align-to-comma-before (begin end)
   "Align region to equal signs"
   (interactive "r")
   (align-regexp
-	  begin end
+    begin end
     (rx (group (zero-or-more (syntax whitespace))) ",") 1 1 )
-	)
+  )
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -425,17 +430,17 @@
 (defun kill-other-buffers ()
   "Kill all other buffers."
   (interactive)
-	(mapc 'kill-buffer
-		(delq (current-buffer) (buffer-list))
-		)
-	)
+  (mapc 'kill-buffer
+    (delq (current-buffer) (buffer-list))
+    )
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;** scroll
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun gro-scroll-down1 ()
-	"Scroll one line down and recenter."
+  "Scroll one line down and recenter."
   (interactive)
   (scroll-down 1)
   (move-to-window-line nil)
@@ -466,14 +471,14 @@
 (if (memq window-system '(w32))
   (progn
     (defun gro-cmd-help
-	    (name)
-	    "Get cmd (NT) help"
-	    (interactive "sHelp on cmd: \n")
-	    (switch-to-buffer "*cmd help*")
-	    (erase-buffer)
-	    (insert (format "%s" (shell-command-to-string (format "help %s" name))))
-	    (beginning-of-buffer)
-	    )
+      (name)
+      "Get cmd (NT) help"
+      (interactive "sHelp on cmd: \n")
+      (switch-to-buffer "*cmd help*")
+      (erase-buffer)
+      (insert (format "%s" (shell-command-to-string (format "help %s" name))))
+      (beginning-of-buffer)
+      )
     )
   )
 
@@ -547,13 +552,13 @@
   (erase-buffer)
   (insert "ASCII\n")
   (insert "-----\n")
-  (let ((i 31))				;or 0 (non printable)
+  (let ((i 31))       ;or 0 (non printable)
     (while (< i 254)
       (setq i (+ i 1))
       (insert (format "%3d %2xh '%c'   " i i i) ;%X from  20.3
-	      )
+        )
       (if (= 0 (% (- i 31) 4) )
-	      (insert "\n") )
+        (insert "\n") )
       )
     )
   (beginning-of-buffer)
@@ -576,11 +581,11 @@
 ;;* Keys for own functions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "<M-down>")    'gro-scroll-down1)
-(global-set-key (kbd "<M-up>")			'gro-scroll-up1)
-(global-set-key (kbd "<M-S-down>")	'gro-scroll-down2)
-(global-set-key (kbd "<M-S-up>")		'gro-scroll-up2)
-(global-set-key (kbd "C-;")				  'gro-insert-date)
-(global-set-key (kbd "C-:")				  'gro-insert-date-atom)
+(global-set-key (kbd "<M-up>")      'gro-scroll-up1)
+(global-set-key (kbd "<M-S-down>")  'gro-scroll-down2)
+(global-set-key (kbd "<M-S-up>")    'gro-scroll-up2)
+(global-set-key (kbd "C-;")         'gro-insert-date)
+(global-set-key (kbd "C-:")         'gro-insert-date-atom)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* server
@@ -603,7 +608,7 @@
  '(electric-indent-mode nil)
  '(js-indent-level 2)
  '(package-selected-packages
-	 '(datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote overcast-theme night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme jazz-theme gruber-darker-theme darkokai-theme darkburn-theme atom-one-dark-theme grandshell-theme select-themes logview beacon theme-looper lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package))
+	 '(datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper treemacs lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package))
  '(powershell-indent 2)
  '(sql-product 'mysql)
  '(tab-width 2))
