@@ -117,13 +117,18 @@
   :ensure t
   )
 
-(use-package treemacs
+(use-package git-command
   :ensure t
   )
 
-;;(use-package treemacs-icons-dired
+(use-package pcmpl-git
+  :ensure t
+  )
+
+;;(use-package treemacs
 ;;  :ensure t
 ;;  )
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* visual upgrade packages
@@ -193,8 +198,8 @@
   ;; Define separators
   (setq csv-separators '("," ";" ":" " "))
   )
-
 (use-package csv-nav :disabled)
+
 (use-package htmlize )
 
 
@@ -608,7 +613,7 @@
  '(electric-indent-mode nil)
  '(js-indent-level 2)
  '(package-selected-packages
-	 '(datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper treemacs lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package))
+	 '(datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package))
  '(powershell-indent 2)
  '(sql-product 'mysql)
  '(tab-width 2))
