@@ -26,10 +26,10 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
-       '("melpa" . "https://melpa.org/packages/")
-       )
+  '("melpa" . "https://melpa.org/packages/")
+  )
 
-(unless package--initialized (package-initialize t))
+(unless package--initialized (package-initialize))
 ;; M-x package-refresh-contents
 ;; M-x package-list-packages
 ;; M-x list-packages
@@ -42,7 +42,8 @@
   )
 
 (require 'use-package)
-(setq use-package-always-ensure t
+(setq
+  use-package-always-ensure t
   use-package-verbose t
   )
 
@@ -152,16 +153,16 @@
 )
 
 (use-package select-themes )
-(use-package atom-one-dark-theme   )
-(use-package darkburn-theme        )
-(use-package darkokai-theme        )
-(use-package grandshell-theme      )
-(use-package gruber-darker-theme   )
-(use-package jbeans-theme          )
-(use-package madhat2r-theme        )
-(use-package mandm-theme           )
-(use-package monokai-theme         )
-(use-package night-owl-theme       )
+(use-package atom-one-dark-theme   :defer t)
+(use-package darkburn-theme        :defer t)
+(use-package darkokai-theme        :defer t)
+(use-package grandshell-theme      :defer t)
+(use-package gruber-darker-theme   :defer t)
+(use-package jbeans-theme          :defer t)
+(use-package madhat2r-theme        :defer t)
+(use-package mandm-theme           :defer t)
+(use-package monokai-theme         :defer t)
+(use-package night-owl-theme       :defer t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* ascii art
