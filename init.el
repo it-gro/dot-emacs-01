@@ -17,6 +17,21 @@
 ;; my "mini" Emacs config
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+; Warning! The SHELL environment variable uses c:\windows\system32\cmd.exe.
+; You probably want to change it so that it uses cmdproxy.exe instead.
+;
+; Warning! shell-file-name uses c:\windows\system32\cmd.exe.
+; You probably want to change it so that it uses cmdproxy.exe instead.
+;
+; Warning! shell-command-switch is "-c".
+; You should set this to "/c" when using a system shell.
+;
+; Warning! w32-quote-process-args is t.
+; You should set this to nil when using a system shell.
+
+
+
 ;;; code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -43,7 +58,7 @@
 
 (require 'use-package)
 (setq
-  use-package-always-ensure t
+  use-package-always-ensure t    ;; ma be disabled after first (long taking) start
   use-package-verbose t
   )
 
@@ -68,12 +83,12 @@
 
 ;; https://github.com/myrjola/diminish.el
 (use-package diminish
-  :ensure t
+  ;; :ensure t
   )
 
 ;; https://github.com/joewreschnig/auto-minor-mode
 (use-package auto-minor-mode
-  :ensure t
+  ;; :ensure t
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -83,19 +98,16 @@
 (use-package try)
 
 (use-package which-key
-  :ensure t
-  :config
+    :config
   (which-key-mode)
   )
 
 (use-package editorconfig
-  :ensure t
   :config
   (editorconfig-mode 1)
   )
 
 (use-package hungry-delete
-  :ensure t
   :init
   (global-hungry-delete-mode)
   )
@@ -114,21 +126,12 @@
   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
   )
 
-(use-package lxd-tramp
-  :ensure t
-  )
-
-(use-package git-command
-  :ensure t
-  )
-
-(use-package pcmpl-git
-  :ensure t
-  )
+(use-package lxd-tramp   )
+(use-package git-command )
+(use-package pcmpl-git   )
 
 ;;(use-package treemacs
-;;  :ensure t
-;;  )
+;;  ;;  )
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -174,7 +177,6 @@
 ;;* prog modes
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package flycheck
-  :ensure t
   :config
   (global-flycheck-mode t)
   )
@@ -573,6 +575,71 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;** cleanup
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun gro-http2md ()
+  "Convert http url to markdown syntax"
+  (interactive)
+  (save-restriction
+    (narrow-to-region (region-beginning) (region-end) )
+    (goto-char 1)
+
+    (replace-regexp "\\(https?://\\([^/\s\n]+\\)\\)\\(?:/?\\([\s\"\]\\|$\\)\\)" "[\\2](\\1)\\3" )
+    ;;                 1           2                        3
+    (goto-char 1)
+	  (replace-regexp "\\(https?://\\([^/\s\n]+\\)\\(\.*\\)/\\(\[^\s\n\"\]+\\)\\)" "[\\4](\\1) \*(\\2)\*" )
+    ;;                 1           2              3         4
+    (goto-char 1)
+	  (replace-regexp "/](http" "](http"  )
+    )
+  )
+
+
+(defun gro-md2http ()
+  "Convert markdown syntax to http url"
+  (interactive)
+  (save-restriction
+    (narrow-to-region (region-beginning) (region-end) )
+    (goto-char 1)
+    (replace-regexp "\\[\[^]\\]+\\](\\(https?://[^)]+\\))\\( (.+?)\\)?" "\\1" )
+    ;;                                1                    2
+    )
+  )
+
+(defun gro-unhex ()
+  "Decode percent encoded URI of URI under cursor or selection.
+
+Example:
+    http://en.wikipedia.org/wiki/Saint_Jerome_in_His_Study_%28D%C3%BCrer%29
+becomes
+    http://en.wikipedia.org/wiki/Saint_Jerome_in_His_Study_(Dürer)
+
+Example:
+    http://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8
+becomes
+    http://zh.wikipedia.org/wiki/文本编辑器
+
+For string version, see `xah-html-url-percent-decode-string'.
+To encode, see `xah-html-encode-percent-encoded-url'.
+URL `http://ergoemacs.org/emacs/elisp_decode_uri_percent_encoding.html'
+Version 2015-09-14."
+  (interactive)
+  (let ($boundaries $p1 $p2 $input-str)
+    (if (use-region-p)
+      (progn
+        (setq $p1 (region-beginning))
+        (setq $p2 (region-end)))
+      (progn
+        (setq $boundaries (bounds-of-thing-at-point 'url))
+        (setq $p1 (car $boundaries))
+        (setq $p2 (cdr $boundaries))))
+    (setq $input-str (buffer-substring-no-properties $p1 $p2))
+    (require 'url-util)
+    (delete-region $p1 $p2)
+    (insert (decode-coding-string (url-unhex-string $input-str) 'utf-8)
+      )
+    )
+  )
+
 
 (defun gro-clean ()
   "Untabify, delete-trailing-whitespace."
