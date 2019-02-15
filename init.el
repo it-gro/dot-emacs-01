@@ -127,12 +127,18 @@
   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
   )
 
-(use-package lxd-tramp   :ensure t)
 (use-package git-command )
 (use-package pcmpl-git   )
-
 (use-package vagrant       :ensure t)
-(use-package vagrant-tramp :ensure t)
+
+(if (not (memq window-system '(win32 w32)))
+		(progn 
+			(use-package lxd-tramp   :ensure t)
+			(use-package vagrant-tramp :ensure t)
+			)
+	)
+
+
 
 ;;(use-package treemacs
 ;;  ;;  )
