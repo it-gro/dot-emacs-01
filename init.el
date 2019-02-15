@@ -70,9 +70,9 @@
 (setq inhibit-startup-message t)
 ;;(view-echo-area-messages)
 ;;(tool-bar-mode -1)
-;;(load-theme 'manoj-dark)
+(load-theme 'manoj-dark)
 ;;(load-theme 'leuven)
-(load-theme 'ubuntu t)
+;;(load-theme 'ubuntu t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; packages install
