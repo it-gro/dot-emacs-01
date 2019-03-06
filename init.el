@@ -70,8 +70,9 @@
 (setq inhibit-startup-message t)
 ;;(view-echo-area-messages)
 ;;(tool-bar-mode -1)
-;;(load-theme 'manoj-dark)
-(load-theme 'leuven)
+(load-theme 'manoj-dark)
+;;(load-theme 'leuven)
+;;(load-theme 'ubuntu t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; packages install
@@ -126,9 +127,18 @@
   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
   )
 
-(use-package lxd-tramp   )
 (use-package git-command )
 (use-package pcmpl-git   )
+(use-package vagrant       :ensure t)
+
+(if (not (memq window-system '(win32 w32)))
+		(progn 
+			(use-package lxd-tramp   :ensure t)
+			(use-package vagrant-tramp :ensure t)
+			)
+	)
+
+
 
 ;;(use-package treemacs
 ;;  ;;  )
@@ -166,6 +176,7 @@
 (use-package mandm-theme           :defer t)
 (use-package monokai-theme         :defer t)
 (use-package night-owl-theme       :defer t)
+(use-package ubuntu-theme          :defer t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* ascii art
@@ -267,13 +278,21 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* revert
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(global-auto-revert-mode 1)
+(global-auto-revert-mode t)
 (setq auto-revert-verbose nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* clipboard
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq save-interprogram-paste-before-kill 1)
+
+;;https://www.emacswiki.org/emacs/CopyAndPaste
+;(setq x-select-enable-primary   t )   
+;(setq x-select-enable-clipboard t )   
+;(global-set-key (kbd "<mouse-2>") 'x-clipboard-yank)
+;;(global-set-key (kbd "<mouse-2>") 'clipboard-yank)
+;(delete-selection-mode)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* hippie expand
@@ -649,6 +668,33 @@ Version 2015-09-14."
   (delete-trailing-whitespace)
   )
 
+(defun right-justify-current-line ()
+  "Right-justify this line."
+  (interactive)
+  (justify-current-line 'right))
+
+(defun right-fill-paragraph ()
+  "Fill paragraph with right justification."
+  (interactive)
+  (fill-paragraph 'right))
+
+
+(defun right-region (from to)
+  "Right-justify each nonblank line starting in the region."
+  (interactive "r")
+  (if (> from to)
+      (let ((tem to))
+    (setq to from from tem)))
+  (save-excursion
+    (save-restriction
+      (narrow-to-region from to)
+      (goto-char from)
+      (while (not (eobp))
+    (or (save-excursion (skip-chars-forward " \t") (eolp))
+        ;; (center-line))              ; this was the original code
+        (justify-current-line 'right)) ; this is the new code
+    (forward-line 1)))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* Keys for own functions
@@ -678,14 +724,14 @@ Version 2015-09-14."
  '(css-indent-level 2)
  '(custom-safe-themes
 	 (quote
-		("3860a842e0bf585df9e5785e06d600a86e8b605e5cc0b74320dfe667bcbe816c" default)))
+		("1b6f7535c9526a5dbf9fb7e3604d0280feb7a07b970caf21ebd276ddc93ef07a" "28bf1b0a72e3a1e08242d776c5befc44ba67a36ced0e55df27cfc7ae6be6c24d" "3860a842e0bf585df9e5785e06d600a86e8b605e5cc0b74320dfe667bcbe816c" default)))
  '(dired-copy-preserve-time t)
  '(dired-dwim-target t)
  '(electric-indent-mode nil)
  '(js-indent-level 2)
  '(package-selected-packages
 	 (quote
-		(datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
+		(ubuntu-theme vagrant-tramp vagrant datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
  '(powershell-indent 2)
  '(sql-product (quote mysql))
  '(tab-width 2))
