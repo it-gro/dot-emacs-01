@@ -3,6 +3,7 @@
 ac-comphist.dat
 auto-save-list
 backups
+%backup%~
 elpa
 ido.last
 logview-cache.extmap
@@ -13,4 +14,4 @@ session.*
 smex-items
 tramp
 work
-#recentf#
+\#recentf#
