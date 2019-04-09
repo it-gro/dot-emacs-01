@@ -731,7 +731,8 @@ Version 2015-09-14."
  '(js-indent-level 2)
  '(package-selected-packages
 	 (quote
-		(ubuntu-theme vagrant-tramp vagrant datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
+		(wsd-mode flycheck-plantuml plantuml-mode eyuml ubuntu-theme vagrant-tramp vagrant datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
+ '(plantuml-jar-path "/home/grossnik/apps/plantuml/plantuml.jar")
  '(powershell-indent 2)
  '(sql-product (quote mysql))
  '(tab-width 2))
@@ -742,3 +743,5 @@ Version 2015-09-14."
  ;; If there is more than one, they won't work right.
  '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
 ;;; init.el ends here
+
+
