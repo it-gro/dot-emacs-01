@@ -2,9 +2,11 @@
 ;; Automatically generated file!!! DO NOT EDIT!!!
 
 (setq url-cookie-storage
- '(("www.websequencediagrams.com"
-	[url-cookie "PHPSESSID" "Su8CmzGtpEdvkoY3PKFL1dRwKhC_sPdE" "Mon, 06 May 2019 20:56:54 GMT" "/" "www.websequencediagrams.com" nil]
-	[url-cookie "HttpOnly" nil "Mon, 06 May 2019 20:56:54 GMT" "/" "www.websequencediagrams.com" nil]))
+ '(("n142.network-auth.com"
+	[url-cookie "p_splash_session" "MOVGd6bSgxy32oTitFz9IfH8-WAIm_K4qwOm6_nUyxLov8EvJlyk7eHOMoYCqsiHnbnSEIUaz-smeC_sId7uBinTPRG0qW2zIWgvM6hGiUvg9mduCCuDCN89jYXTbab2e7BeWDn5pBTySfN6OBQ0yrqBzw95DNF8ag3CsiBnnjeuKFJsd4ryE03FRKImOK6c86oSZEhGcCjpEqMOj7MHAQruSAyg2w0htuM66jQZO_W8xHuC3-71mQbOCBuEqweol6_M8hsBxwbVkPA2lTgT7kffYfbGjBGrCOdDQOspo2OxyHWSsJBIi4SUDVarna_avqPXecBOEUiprnvnejAXI2hV-DQlnM2lNQVtXzZwE6pamzTJx9F_JqaotB1P93-fDxL4uSXqgJ1-85HyhO5Crluk9L0xYQhJbKaLm_hibV0lrt8tGmFX651UZN-LS3sBGxpQi43w5OU9zQd3Ub2aOy8HIdQ-O2vITpsf0DzVuEXfhdGf9cQzbtzwSDTJTOeBtW8v89PX3S1wgS0RuI1eo_4CkRGsfZqBgxVKYHfGUrnOvVqPId_IceBVGzWOAEIk_yS2tfIv-_SdsiLWJa-xZOkgQP" "11-May-2019 09:03:21.00 GMT" "/" "n142.network-auth.com" nil])
+ ("www.websequencediagrams.com"
+	[url-cookie "HttpOnly" nil "Mon, 06 May 2019 20:56:54 GMT" "/" "www.websequencediagrams.com" nil]
+	[url-cookie "PHPSESSID" "Su8CmzGtpEdvkoY3PKFL1dRwKhC_sPdE" "Mon, 06 May 2019 20:56:54 GMT" "/" "www.websequencediagrams.com" nil]))
 )
 (setq url-cookie-secure-storage
  'nil)
