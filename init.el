@@ -735,6 +735,7 @@ Version 2015-09-14."
 		(plantuml wsd-mode flycheck-plantuml plantuml-mode eyuml ubuntu-theme vagrant-tramp vagrant datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
  '(plantuml-jar-path "/home/grossnik/apps/plantuml/plantuml.jar")
  '(powershell-indent 2)
+ '(python-indent-offset 2)
  '(sql-product (quote mysql))
  '(tab-width 2))
 (custom-set-faces
