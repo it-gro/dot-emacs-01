@@ -729,6 +729,8 @@ Version 2015-09-14."
  '(dired-copy-preserve-time t)
  '(dired-dwim-target t)
  '(electric-indent-mode nil)
+ '(visible-bell t)
+ '(ring-bell-function 'ignore)
  '(js-indent-level 2)
  '(package-selected-packages
 	 (quote
