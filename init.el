@@ -729,17 +729,17 @@ Version 2015-09-14."
  '(dired-copy-preserve-time t)
  '(dired-dwim-target t)
  '(electric-indent-mode nil)
- '(visible-bell t)
- '(ring-bell-function 'ignore)
  '(js-indent-level 2)
  '(package-selected-packages
 	 (quote
-		(plantuml wsd-mode flycheck-plantuml plantuml-mode eyuml ubuntu-theme vagrant-tramp vagrant datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
+		(cheat-sh plantuml wsd-mode flycheck-plantuml plantuml-mode eyuml ubuntu-theme vagrant-tramp vagrant datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
  '(plantuml-jar-path "/home/grossnik/apps/plantuml/plantuml.jar")
  '(powershell-indent 2)
  '(python-indent-offset 2)
+ '(ring-bell-function (quote ignore))
  '(sql-product (quote mysql))
- '(tab-width 2))
+ '(tab-width 2)
+ '(visible-bell t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
