@@ -245,18 +245,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* generic-x
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'generic-x)
-;;(setq auto-mode-alist (cons '("\\.cmd$\\|\\.CMD$" . bat-generic-mode) auto-mode-alist))
-
-(setq
-  generic-define-mswindows-modes t
-  generic-define-unix-modes t
-  )
+(require 'generic-x)                                                                                                
+(setq auto-mode-alist (cons '("\\.cmd$\\|\\.CMD$" . bat-generic-mode) auto-mode-alist))                             
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;** CUA (Motif/Windows GUI style shortcuts)
-;;   still some problems when mixing C-w M-w C-y with C-c C-x C-v
+;;** CUA (Windows GUI style shortcuts)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'cua-base)
 (cua-mode 't)
@@ -269,11 +263,6 @@
 ;;* show line and col pos in modeline
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (display-time)
-;;(line-number-mode t)
-(global-linum-mode t)
-(column-number-mode t)
-(global-hl-line-mode t)
-(show-paren-mode 1)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -726,10 +715,14 @@ Version 2015-09-14."
  '(custom-safe-themes
 	 (quote
 		("1b6f7535c9526a5dbf9fb7e3604d0280feb7a07b970caf21ebd276ddc93ef07a" "28bf1b0a72e3a1e08242d776c5befc44ba67a36ced0e55df27cfc7ae6be6c24d" "3860a842e0bf585df9e5785e06d600a86e8b605e5cc0b74320dfe667bcbe816c" default)))
+ '(column-number-mode t)
  '(dired-copy-preserve-time t)
  '(dired-dwim-target t)
  '(electric-indent-mode nil)
+ '(global-hl-line-mode t)
+ '(global-linum-mode t)
  '(js-indent-level 2)
+ '(show-paren-mode 1)
  '(package-selected-packages
 	 (quote
 		(cheat-sh plantuml wsd-mode flycheck-plantuml plantuml-mode eyuml ubuntu-theme vagrant-tramp vagrant datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
