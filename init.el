@@ -731,6 +731,7 @@ Version 2015-09-14."
  '(plantuml-jar-path "/home/grossnik/apps/plantuml/plantuml.jar")
  '(powershell-indent 2)
  '(python-indent-offset 2)
+ '(python-shell-interpreter "python3")
  '(ring-bell-function (quote ignore))
  '(sql-product (quote mysql))
  '(tab-width 2)
