@@ -71,6 +71,8 @@
 ;;(view-echo-area-messages)
 ;;(tool-bar-mode -1)
 ;;(load-theme 'manoj-dark)
+;;(load-theme 'tango)
+;;(load-theme 'whiteboard)
 ;;(load-theme 'leuven)
 ;;(load-theme 'ubuntu t)
 
