@@ -58,7 +58,7 @@
 
 (require 'use-package)
 (setq
-  use-package-always-ensure t    ;; ma be disabled after first (long taking) start
+  use-package-always-ensure t    ;; may be disabled after first (long taking) start
   use-package-verbose t
   )
 
@@ -199,6 +199,12 @@
 (use-package powershell)
 (use-package sqlup-mode)
 
+(use-package elpy
+  :ensure t
+  :defer t
+  :init
+  (advice-add 'python-mode :before 'elpy-enable)
+	)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* fileformat modes
@@ -713,18 +719,17 @@ Version 2015-09-14."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 2)
+ '(column-number-mode t)
  '(css-indent-level 2)
  '(custom-safe-themes
 	 (quote
 		("1b6f7535c9526a5dbf9fb7e3604d0280feb7a07b970caf21ebd276ddc93ef07a" "28bf1b0a72e3a1e08242d776c5befc44ba67a36ced0e55df27cfc7ae6be6c24d" "3860a842e0bf585df9e5785e06d600a86e8b605e5cc0b74320dfe667bcbe816c" default)))
- '(column-number-mode t)
  '(dired-copy-preserve-time t)
  '(dired-dwim-target t)
  '(electric-indent-mode nil)
  '(global-hl-line-mode t)
  '(global-linum-mode t)
  '(js-indent-level 2)
- '(show-paren-mode 1)
  '(package-selected-packages
 	 (quote
 		(cheat-sh plantuml wsd-mode flycheck-plantuml plantuml-mode eyuml ubuntu-theme vagrant-tramp vagrant datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
@@ -733,6 +738,7 @@ Version 2015-09-14."
  '(python-indent-offset 2)
  '(python-shell-interpreter "python3")
  '(ring-bell-function (quote ignore))
+ '(show-paren-mode 1)
  '(sql-product (quote mysql))
  '(tab-width 2)
  '(visible-bell t))
