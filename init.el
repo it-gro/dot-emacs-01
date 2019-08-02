@@ -143,8 +143,9 @@
 
 (use-package plantuml-mode :ensure t)
 
-;;(use-package treemacs
-;;  ;;  )
+(use-package treemacs 
+	:defer t
+	)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -200,10 +201,10 @@
 (use-package sqlup-mode)
 
 (use-package elpy
-  :ensure t
-  :defer t
-  :init
-  (advice-add 'python-mode :before 'elpy-enable)
+	:ensure t
+	:defer t
+	:init
+	(advice-add 'python-mode :before 'elpy-enable)
 	)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
