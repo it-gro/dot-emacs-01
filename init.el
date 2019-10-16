@@ -728,6 +728,7 @@ Version 2015-09-14."
  '(dired-copy-preserve-time t)
  '(dired-dwim-target t)
  '(electric-indent-mode nil)
+ '(flymake-gui-warnings-enabled nil)
  '(global-hl-line-mode t)
  '(global-linum-mode t)
  '(js-indent-level 2)
