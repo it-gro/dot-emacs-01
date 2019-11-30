@@ -751,7 +751,7 @@ Version 2015-09-14."
  '(js-indent-level 2)
  '(package-selected-packages
 	 (quote
-		(cheat-sh plantuml wsd-mode flycheck-plantuml plantuml-mode eyuml ubuntu-theme vagrant-tramp vagrant datetime-format htmlize csv-mode dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode flycheck boxquote night-owl-theme monokai-theme mandm-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git git-command lxd-tramp smex expand-region hungry-delete editorconfig which-key try auto-minor-mode diminish use-package)))
+		(plantuml flycheck-plantuml eyuml ubuntu-theme vagrant datetime-format dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode boxquote monokai-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git lxd-tramp smex expand-region hungry-delete try auto-minor-mode diminish)))
  '(plantuml-default-exec-mode (quote jar))
  '(plantuml-jar-path "/home/grossnik/apps/plantuml/plantuml.jar")
  '(powershell-indent 2)
