@@ -207,6 +207,9 @@
 	(advice-add 'python-mode :before 'elpy-enable)
 	)
 
+(setq elpy-rpc-virtualenv-path 'current)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;* fileformat modes
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -751,7 +754,7 @@ Version 2015-09-14."
  '(js-indent-level 2)
  '(package-selected-packages
 	 (quote
-		(plantuml flycheck-plantuml eyuml ubuntu-theme vagrant datetime-format dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode boxquote monokai-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git lxd-tramp smex expand-region hungry-delete try auto-minor-mode diminish)))
+		(markdown-toc emoji-cheat-sheet-plus emoji-display emoji-fontset emojify plantuml flycheck-plantuml eyuml ubuntu-theme vagrant datetime-format dockerfile-mode toml-mode yaml-mode json-mode markdown-mode sqlup-mode powershell basic-mode boxquote monokai-theme madhat2r-theme jbeans-theme gruber-darker-theme grandshell-theme darkokai-theme darkburn-theme atom-one-dark-theme select-themes logview beacon theme-looper pcmpl-git lxd-tramp smex expand-region hungry-delete try auto-minor-mode diminish)))
  '(plantuml-default-exec-mode (quote jar))
  '(plantuml-jar-path "/home/grossnik/apps/plantuml/plantuml.jar")
  '(powershell-indent 2)
@@ -768,4 +771,6 @@ Version 2015-09-14."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+
+(provide 'init)
 ;;; init.el ends here
