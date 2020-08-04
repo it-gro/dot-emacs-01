@@ -1,4 +1,4 @@
-3;;; package --- Summary
+;;; package --- Summary
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;$Copyright: Bruno Grossniklaus $
 ;;$License:   GPL $
@@ -75,6 +75,32 @@
 ;;(load-theme 'whiteboard)
 ;;(load-theme 'leuven)
 ;;(load-theme 'ubuntu t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;* colors
+;; see list of colors with M-x list-colors-display
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;(setq default-frame-alist
+;;      (append '(
+;;                (background-color . "white")
+;;                (foreground-color . "black")
+;;                (cursor-color     . "blue")
+;;                )
+;;              )
+;;      )
+
+(setq default-frame-alist
+      (append '(
+                (background-color . "black")
+                (foreground-color . "white")
+                (cursor-color     . "orange")
+                )
+              )
+      )
+
+;;(set-background-color "black")
+;;(set-foreground-color "white")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; packages install
